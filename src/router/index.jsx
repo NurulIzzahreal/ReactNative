@@ -2,10 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Beranda from '../pages/Beranda';
-import Splash from '../pages/Splash';
-import Order from '../pages/Order';
-import Akun from '../pages/Akun';
+import { Beranda, Splash, Order, Akun } from '../pages';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -22,7 +19,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="MainApp">
+    <Stack.Navigator initialRouteName="Splash">
         <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }}/>
         <Stack.Screen name="MainApp" component={MainApp} options={{ headerShown: false }}/>
     </Stack.Navigator>
