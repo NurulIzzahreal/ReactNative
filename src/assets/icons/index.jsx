@@ -12,6 +12,7 @@ import IconHoliday  from './holiday.svg'
 import IconVilla  from './villa.svg'
 import IconBus  from './bus.svg'
 import IconKereta  from './kereta.svg'
+import IconPesanan  from './pesananA.svg'
 
 export { 
     IconAkun,
@@ -27,5 +28,6 @@ export {
     IconHoliday, 
     IconVilla, 
     IconBus, 
-    IconKereta
+    IconKereta,
+    IconPesanan
 }

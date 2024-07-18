@@ -1,11 +1,13 @@
-import { Dimensions, ImageBackground, Image, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, ImageBackground, Image, StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react'
 import { ImageHeader, Logo } from '../../assets'
 import { Saldo } from '../../components'
+import { WARNA_ABU_ABU } from '../../utils/constant'
 
 const Beranda = () => {
   return (
     <View style={styles.page}>
+      <ScrollView showsVerticalScrollIndicator={false}>
       <ImageBackground source={ImageHeader} style={styles.header}>
         <Image source={Logo} style={styles.logo} />
         <View style={styles.hello}>
@@ -25,6 +27,14 @@ const Beranda = () => {
           <ButtonIcon title="Kereta" type="layanan"/>
         </View>
       </View>
+      <View style={styles.pesananAktif}>
+        <Text style={styles.label}>Pesanan Aktif</Text>
+        <PesananAktif title="Pesan Tiket Pesawat ke Hongkong" status="Sudah Cek-In"/>
+        <PesananAktif title="Pesan Kamar Hotel" status="Belum Cek-In"/>
+        <PesananAktif title="Pesan Villa di Bali" status="Sudah Cek-In"/>
+        <PesananAktif title="Pesan Tiket Kereta" status="Sudah Cek-In"/>
+      </View>
+      </ScrollView>
     </View>
   )
 }
@@ -36,7 +46,8 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   page: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   header: {
     width: windowWidth,
@@ -70,7 +81,15 @@ const styles = StyleSheet.create({
   iconLayanan: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 12,
+    marginTop: 10,
     flexWrap: 'wrap'
+  },
+  pesananAktif: {
+    paddingTop: 10,
+    paddingHorizontal: 30,
+    backgroundColor: WARNA_ABU_ABU,
+    flex: 1,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
   }
 })
