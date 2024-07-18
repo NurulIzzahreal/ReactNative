@@ -14,6 +14,17 @@ const Beranda = () => {
         </View>
       </ImageBackground>
       <Saldo />
+      <View style={styles.layanan}>
+        <Text style={styles.label}>Layanan Kami</Text>
+        <View style={styles.iconLayanan}>
+          <ButtonIcon title="Pesawat" type="layanan"/>
+          <ButtonIcon title="Hotel" type="layanan"/>
+          <ButtonIcon title="Holiday" type="layanan"/>
+          <ButtonIcon title="Villa" type="layanan"/>
+          <ButtonIcon title="Bus" type="layanan"/>
+          <ButtonIcon title="Kereta" type="layanan"/>
+        </View>
+      </View>
     </View>
   )
 }
@@ -47,5 +58,19 @@ const styles = StyleSheet.create({
   username: {
     fontSize: 22,
     fontFamily: 'TitilliumWeb-Bold'
+  },
+  layanan: {
+    paddingLeft: 30,
+    paddingTop: 15,
+  },
+  label: {
+    fontSize: 18,
+    fontFamily: 'TitilliumWeb-Bold'
+  },
+  iconLayanan: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 12,
+    flexWrap: 'wrap'
   }
 })
